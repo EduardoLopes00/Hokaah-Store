@@ -1,0 +1,11 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "JWT login server",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Eduardo Lopes",
+  "license": "ISC"
+}
