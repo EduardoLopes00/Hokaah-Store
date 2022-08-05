@@ -1,16 +1,8 @@
 const mongoose = require("mongoose");
-const  getIp  = require("../utils/getIp");
-
-
-
 const { MONGO_URI } = process.env;
-
-
 
 exports.connect = () => {
     console.log('Connecting to database...')
-
-    console.log(getIp())
 
     mongoose   
         .connect(MONGO_URI, {
