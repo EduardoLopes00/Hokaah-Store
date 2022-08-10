@@ -1,5 +1,5 @@
-import { ImageArea } from '../../components/LoginPage/ImageArea';
-import { InputArea } from '../../components/LoginPage/InputArea';
+import { ImageArea } from '../../components/UnsignedInPage/ImageArea';
+import { InputArea } from '../../components/UnsignedInPage/InputArea';
 import './styles.scss';
 
 export const Login = () => {
