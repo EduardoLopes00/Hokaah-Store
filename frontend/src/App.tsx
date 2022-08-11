@@ -1,10 +1,10 @@
 import './App.scss';
-import { UnsignedIn } from './pages/UnsignedIn';
+import { Router } from 'src/routes';
 
 function App() {
   return (
     <div className="App">
-      <UnsignedIn />
+      <Router />
     </div>
   );
 }

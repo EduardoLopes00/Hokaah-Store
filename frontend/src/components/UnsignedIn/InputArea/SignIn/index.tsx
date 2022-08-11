@@ -1,6 +1,6 @@
 import './styles.scss';
 
-export const Login = () => {
+export const SignIn = () => {
   return (
     <div className="input-area-content">
       <h1>Login</h1>

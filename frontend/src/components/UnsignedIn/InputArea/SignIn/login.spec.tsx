@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
-import { Login } from './index';
+import { SignIn } from './index';
 
 describe('Login page', () => {
   it('render correctly', () => {
-    render(<Login />);
+    render(<SignIn />);
 
     expect(screen.getByText('Forget my password')).toBeInTheDocument();
   });
