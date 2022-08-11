@@ -1,10 +1,10 @@
 import './App.scss';
-import { Login } from './pages/UnsignedInPage';
+import { UnsignedIn } from './pages/UnsignedIn';
 
 function App() {
   return (
     <div className="App">
-      <Login />
+      <UnsignedIn />
     </div>
   );
 }
