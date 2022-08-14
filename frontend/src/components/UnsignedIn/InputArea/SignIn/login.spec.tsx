@@ -5,6 +5,6 @@ describe('Login page', () => {
   it('render correctly', () => {
     render(<SignIn />);
 
-    expect(screen.getByText('Forget my password')).toBeInTheDocument();
+    expect(screen.getByText('Sign In')).toBeInTheDocument();
   });
 });

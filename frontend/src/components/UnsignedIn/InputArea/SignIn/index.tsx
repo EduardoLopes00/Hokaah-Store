@@ -3,7 +3,7 @@ import './styles.scss';
 export const SignIn = () => {
   return (
     <div className="input-area-content">
-      <h1>Login</h1>
+      <h1>Sign In</h1>
 
       <div className="fields-area">
         <label htmlFor="email">E-mail</label>

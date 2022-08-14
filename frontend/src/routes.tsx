@@ -6,10 +6,11 @@ export const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<UnsignedIn page="signin" />} path="/signin" />
-        <Route element={<UnsignedIn page="signup" />} path="/signup" />
-        <Route element={<UnsignedIn page="forgotpassword" />} path="/forgotpassword" />
-        <Route element={<Home />} path="/home" />
+        <Route path="/signin" element={<UnsignedIn page="signin" />} />
+        <Route path="/signup" element={<UnsignedIn page="signup" />} />
+        <Route path="/forgotpassword" element={<UnsignedIn page="forgotpassword" />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="*" element={<h1>Not fount!</h1>} />
       </Routes>
     </BrowserRouter>
   );

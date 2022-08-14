@@ -1,16 +1,20 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { InputArea } from '.';
 
-describe('InputArea page', () => {
-  it('It renders signIn correctly', () => {
-    render(<InputArea />);
+describe('InputArea at UnsignedIn page', () => {
+  it('Renders signIn correctly', () => {
+    render(<InputArea page="signin" />);
+
+    expect(screen.getByText('Sign In')).toBeInTheDocument();
   });
 
-  it('It renders signUp correctly', () => {
-    render(<InputArea />);
+  it('Renders signUp correctly', () => {
+    render(<InputArea page="signup" />);
+    expect(screen.getByText('Sign Up')).toBeInTheDocument();
   });
 
-  it('It renders forgetPassword correctly', () => {
-    render(<InputArea />);
+  it('Renders forgetPassword correctly', () => {
+    render(<InputArea page="forgotpassword" />);
+    expect(screen.getByText('Recover password')).toBeInTheDocument();
   });
 });
