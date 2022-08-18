@@ -10,7 +10,7 @@ export const Router = () => {
         <Route path="/signup" element={<UnsignedIn page="signup" />} />
         <Route path="/forgotpassword" element={<UnsignedIn page="forgotpassword" />} />
         <Route path="/home" element={<Home />} />
-        <Route path="*" element={<h1>Not fount!</h1>} />
+        <Route path="*" element={<h1>Not found!</h1>} />
       </Routes>
     </BrowserRouter>
   );

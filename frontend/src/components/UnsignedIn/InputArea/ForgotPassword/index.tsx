@@ -1,3 +1,3 @@
 export const ForgotPassword = () => {
-  return <h1>ForgetPassword</h1>;
+  return <h1>Recover password</h1>;
 };
