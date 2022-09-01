@@ -6,5 +6,5 @@ type loginData = {
 };
 
 export const login = (loginData: loginData) => {
-  return api.post('/login', { loginData });
+  return api.post('/login', loginData);
 };
