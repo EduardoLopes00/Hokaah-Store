@@ -1,6 +1,6 @@
-# jwt-login-screen
+# Hokaah Store
 
-This is a project to simulate a basic authentication system using nodeJS with JWT on backend and React in front.
+This is a project to simulate a hokaah store control system.
 
 More than pratice the auth using JWT, I want to use this project to learn how to configure a project from scratch, both in React and Node. This includes setting up all the environment necessary to run the tools that I mentioned below.
 
