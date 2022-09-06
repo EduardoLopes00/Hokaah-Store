@@ -12,11 +12,10 @@
   transition: 0.2s;
 
   &:hover {
-    background-color: white;
+    background-color: var(--dark-blue);
 
-    border: 2px solid var(--medium-blue);
+    border: 2px solid var(--dark-blue);
 
-    color: var(--medium-blue);
     cursor: pointer;
   }
 }
