@@ -7,9 +7,18 @@
 
 .inputComponent-input {
   border-radius: 4px;
+  padding: 0 4px;
   height: 24px;
 
-  :focus {
-    border: initial;
+  caret-color: var(--ultra-dark-blue);
+
+  color: black;
+
+  background-color: var(--ultra-light-blue);
+
+  border: none;
+
+  &:focus {
+    outline: none;
   }
 }
