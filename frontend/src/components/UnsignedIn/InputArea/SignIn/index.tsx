@@ -5,11 +5,15 @@ import './styles.scss';
 import { useState } from 'react';
 
 export const SignIn = () => {
+  const login = (email: string, password: string) => {
+    // console.log('email: ', email);
+    // console.log('password: ', password);
+
+    authenticate(email, password);
+  };
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  console.log('email: ', email);
-  console.log('pass: ', password);
 
   const { authenticate } = useAuth();
 
@@ -37,7 +41,7 @@ export const SignIn = () => {
           labelText="Password"
         />
 
-        <TextButton onClick={() => authenticate(email, password)} text="SignIn" />
+        <TextButton onClick={() => login(email, password)} text="SignIn" />
 
         <h4>Forget my password</h4>
         <h4>Register</h4>
