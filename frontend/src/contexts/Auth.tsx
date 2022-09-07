@@ -19,7 +19,6 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
       .then((response) => {
         setUserLogged(response.data);
         localStorage.setItem('token', response.data.token);
-        // navigate('/home');
       })
       .catch((err) => alert(err));
   };
