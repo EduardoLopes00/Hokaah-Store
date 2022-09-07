@@ -10,8 +10,7 @@ type AuthContextProviderProps = {
 export const AuthContext = createContext<AuthContextType>({} as AuthContextType);
 
 export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
-  const [userLogged, setUserLogged] = useState<UserLogged>({} as any);
-  // const navigate = useNavigate();
+  const [userLogged, setUserLogged] = useState<UserLogged | null>(null);
 
   const authenticate = (email: string, password: string) => {
     signIn({ email, password })
