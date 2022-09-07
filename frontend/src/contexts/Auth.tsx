@@ -2,7 +2,6 @@ import { createContext, ReactNode, useState } from 'react';
 import { AuthContextType } from 'src/types/AuthContext';
 import { UserLogged } from 'src/types/UserLogged';
 import { signIn } from 'src/services/authService';
-import { useNavigate } from 'react-router-dom';
 
 type AuthContextProviderProps = {
   children: ReactNode;
