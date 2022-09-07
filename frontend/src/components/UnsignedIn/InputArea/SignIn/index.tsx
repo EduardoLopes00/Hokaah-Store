@@ -6,9 +6,6 @@ import { useState } from 'react';
 
 export const SignIn = () => {
   const login = (email: string, password: string) => {
-    // console.log('email: ', email);
-    // console.log('password: ', password);
-
     authenticate(email, password);
   };
 
@@ -43,8 +40,8 @@ export const SignIn = () => {
 
         <TextButton onClick={() => login(email, password)} text="SignIn" />
 
-        <h4>Forget my password</h4>
-        <h4>Register</h4>
+        <h4 className="aux-text">Forget my password</h4>
+        <h4 className="aux-text">Register</h4>
       </div>
     </div>
   );
