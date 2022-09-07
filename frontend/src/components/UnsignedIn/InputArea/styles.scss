@@ -22,3 +22,16 @@
 
   margin: 16px 0 92px 0;
 }
+
+.aux-text {
+  cursor: pointer;
+
+  font-weight: 400;
+  margin-top: 6px;
+
+  transition: 0.2s;
+
+  &:hover {
+    color: var(--dark-blue);
+  }
+}
