@@ -23,6 +23,8 @@ const isValidUser = (user) => {
 };
 
 const isValidPassword = async (user, password) => {
+  // const test =
+
   return await bycript.compare(password, user.password);
 };
 
@@ -76,13 +78,13 @@ app.post("/login", async (req, res) => {
     const { email, password } = req.body;
 
     if (!(email && password)) {
-      res.status(400).send("All input is required");
+      return res.status(400).send("All input is required");
     }
 
     const user = await User.findOne({ email });
 
-    if (!isValidUser(user) || !isValidPassword(user, password)) {
-      res.status(400).send("Invalid Credentials");
+    if (!isValidUser(user) || !(await isValidPassword(user, password))) {
+      return res.status(400).send("Invalid Credentials");
     }
 
     const token = jwt.sign(
@@ -103,18 +105,13 @@ app.post("/login", async (req, res) => {
       last_name: user.last_name,
     };
 
-    res.status(200).json(response);
+    return res.status(200).json(response);
   } catch (err) {
-    console.log(err);
-    res.status(500).send({
+    return res.status(500).send({
       message: "Something went wrong when trying to log in.",
       err: err,
     });
   }
-});
-
-app.post("/welcome", auth, (req, res) => {
-  res.status(200).send("Welcome");
 });
 
 module.exports = app;
