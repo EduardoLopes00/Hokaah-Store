@@ -2,11 +2,13 @@ import { AxiosResponse } from 'axios';
 import api from 'src/api';
 import { UserLogged } from 'src/types/UserLogged';
 
-type loginData = {
+export type SignInRequestVariables = {
   email: string;
   password: string;
 };
 
-export const signIn = (loginData: loginData): Promise<AxiosResponse<UserLogged>> => {
-  return api.post('/login', loginData);
+export const signIn = (
+  signInRequestVariables: SignInRequestVariables
+): Promise<AxiosResponse<UserLogged>> => {
+  return api.post('/login', signInRequestVariables);
 };

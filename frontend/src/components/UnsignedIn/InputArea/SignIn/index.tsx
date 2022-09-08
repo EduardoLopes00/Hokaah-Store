@@ -5,14 +5,10 @@ import './styles.scss';
 import { useState } from 'react';
 
 export const SignIn = () => {
-  const login = (email: string, password: string) => {
-    authenticate(email, password);
-  };
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const { authenticate } = useAuth();
+  const { authenticate, signInRequest } = useAuth();
 
   return (
     <div className="input-area-content">
@@ -38,7 +34,9 @@ export const SignIn = () => {
           labelText="Password"
         />
 
-        <TextButton onClick={() => login(email, password)} text="SignIn" />
+        {(signInRequest.isLoading && <h1>Loading...</h1>) || (
+          <TextButton onClick={() => authenticate(email, password)} text="SignIn" />
+        )}
 
         <h4 className="aux-text">Forget my password</h4>
         <h4 className="aux-text">Register</h4>

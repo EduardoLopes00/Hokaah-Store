@@ -1,7 +1,9 @@
 import { createContext, ReactNode, useState } from 'react';
 import { AuthContextType } from 'src/types/AuthContext';
 import { UserLogged } from 'src/types/UserLogged';
-import { signIn } from 'src/services/authService';
+import { signIn, SignInRequestVariables } from 'src/services/authService';
+import { useMutation } from 'react-query';
+import { AxiosError, AxiosResponse } from 'axios';
 
 type AuthContextProviderProps = {
   children: ReactNode;
@@ -10,18 +12,24 @@ type AuthContextProviderProps = {
 export const AuthContext = createContext<AuthContextType>({} as AuthContextType);
 
 export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
+  const signInRequest = useMutation<AxiosResponse<UserLogged>, AxiosError, SignInRequestVariables>(
+    signIn,
+    {
+      onSuccess: (response) => {
+        setUserLogged(response.data);
+      }
+    }
+  );
+
   const [userLogged, setUserLogged] = useState<UserLogged | null>(null);
 
   const authenticate = (email: string, password: string) => {
-    signIn({ email, password })
-      .then((response) => {
-        setUserLogged(response.data);
-        localStorage.setItem('token', response.data.token);
-      })
-      .catch((err) => alert(err));
+    signInRequest.mutate({ email, password });
   };
 
   return (
-    <AuthContext.Provider value={{ userLogged, authenticate }}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ userLogged, authenticate, signInRequest }}>
+      {children}
+    </AuthContext.Provider>
   );
 };
