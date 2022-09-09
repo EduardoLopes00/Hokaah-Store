@@ -1,14 +1,16 @@
+import './styles.scss';
 import { TextButton } from 'src/components/General/TextButton';
 import { InputComponent } from 'src/components/General/InputComponent';
 import { useAuth } from 'src/hooks/useAuth';
-import './styles.scss';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const { authenticate, signInRequest } = useAuth();
+  const navigate = useNavigate();
 
   return (
     <div className="input-area-content">
@@ -21,7 +23,7 @@ export const SignIn = () => {
             setEmail(event.target.value);
           }}
           name="email"
-          type="text"
+          type="email"
           labelText="E-mail"
         />
         <InputComponent
@@ -38,8 +40,20 @@ export const SignIn = () => {
           <TextButton onClick={() => authenticate(email, password)} text="SignIn" />
         )}
 
-        <h4 className="aux-text">Forget my password</h4>
-        <h4 className="aux-text">Register</h4>
+        <h4
+          className="link-text"
+          onClick={() => {
+            navigate('/forgotPassword');
+          }}>
+          Forget my password
+        </h4>
+        <h4
+          className="link-text"
+          onClick={() => {
+            navigate('/signup');
+          }}>
+          Register
+        </h4>
       </div>
     </div>
   );
