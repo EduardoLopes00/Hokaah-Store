@@ -23,14 +23,15 @@
   margin: 16px 0 92px 0;
 }
 
-.aux-text {
+.link-text {
   cursor: pointer;
 
-  font-weight: 400;
+  font-weight: 600;
   margin-top: 6px;
 
   transition: 0.2s;
 
+  color: var(--medium-blue);
   &:hover {
     color: var(--dark-blue);
   }
