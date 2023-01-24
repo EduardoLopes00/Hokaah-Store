@@ -14,7 +14,7 @@ In React, I will build a project containing all the most popular tools in projec
     <li>WebSocket</li>   
   </ul>
   
-Besides those pure codding tools, I'm going to implement deploy environments.
+Besides these tools, I'm going to implement deploy environments.
 
 I'm intended to do all the front-end development using TDD. As I'm not used to do It, probably I will not be able to do EVERYTHING with this pattern. But I will try my best.
 
